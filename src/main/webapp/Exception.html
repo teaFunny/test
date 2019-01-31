@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<h1>Ecxeptional page</h1>
+
+<textarea name='Status' id="status"> </textarea>
+<input type='button' onclick='update()' value='Status Update'>
+
+<script>
+
+
+function update(){
+
+//make an ajax call and get status value using the same 'id'
+var var1= document.getElementById("status").value;
+$.ajax({
+
+        type:"POST",//or POST
+        url:'/hello',
+        data:{email:var1},
+        success:function(responsedata){
+               alert("got response as "+"'"+responsedata+"'");
+        }
+     })
+}
+
+</script>
+
+</body>
+</html>
